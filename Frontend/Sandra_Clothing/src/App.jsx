@@ -1,9 +1,13 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import React from "react";
-import HeroPage from "./Pages/HomePage/HeroPage.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeroPage from "./Pages/UserPage/HeroPage.jsx";
 import Login from "./Pages/Login.jsx";
 import SignUp from "./Pages/SignUp.jsx";
-import NewArrivals from "./Pages/HomePage/NewArrivals.jsx";
+import NewArrivals from "./Pages/UserPage/NewArrivals.jsx";
+import BestSellerPage from "./Pages/UserPage/BestSellerPage.jsx";
+import LinenPage from "./Pages/UserPage/LinenPage.jsx";
+import Frocks from "./Pages/UserPage/Frocks.jsx";
+import TshirtPage from "./Pages/UserPage/TshirtPage.jsx";
+import ProductPage from "./Pages/UserPage/ProductPage.jsx";
 import { Userhome } from "./Pages/Userhome.jsx";
 import Footer from "./Components/Footer.jsx";
 
@@ -18,6 +22,12 @@ function App() {
 
         <Route path="/hero" element={<HeroPage />} />
         <Route path="/newarrivals" element={<NewArrivals />} />
+        <Route path="/bestsellers" element={<BestSellerPage />} />
+        <Route path="/linenpage" element={<LinenPage />} />
+        <Route path="/frockpage" element={<Frocks />} />
+        <Route path="/tshirtpage" element={<TshirtPage />} />
+        <Route path="/productpage" element={<ProductPage />} />
+
         <Route path="/footer" element={<Footer />} />
       </Routes>
     </Router>

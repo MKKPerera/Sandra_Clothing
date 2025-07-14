@@ -1,26 +1,40 @@
 import React from "react";
 import { FiUser } from "react-icons/fi";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="w-full bg-white shadow-md px-6 py-4 flex items-center justify-between">
+    <nav className="flex items-center justify-between w-full px-6 py-4 bg-white shadow-md">
       {/* Logo */}
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-10 w-auto" />
+        <img src={logo} alt="Logo" className="w-auto h-10" />
       </div>
 
       {/* Navigation Links */}
       <ul className="hidden md:flex gap-8 text-[#331D0C] font-medium text-lg">
-        <li className="hover:text-gray-600 cursor-pointer">New Arrivals</li>
-        <li className="hover:text-gray-600 cursor-pointer">Linen</li>
-        <li className="hover:text-gray-600 cursor-pointer">Skirts</li>
-        <li className="hover:text-gray-600 cursor-pointer">T-shirts</li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/bestsellers">Best Sellers</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/linenpage">Linen</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/frockpage">Frocks</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/tshirtpage">T-shirts</Link>
+        </li>
       </ul>
 
       {/* Contact/Login Icon */}
       <div className="text-[#331D0C] text-2xl cursor-pointer">
-        <FiUser />
+        <Link to="/login">
+          <FiUser />
+        </Link>
       </div>
     </nav>
   );

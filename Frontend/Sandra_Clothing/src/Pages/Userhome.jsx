@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import HeroPage from "../Pages/HomePage/HeroPage.jsx";
+import HeroPage from "../Pages/UserPage/HeroPage.jsx";
 import NavBar from "../Components/NavBar.jsx";
-import NewArrivals from "../Pages/HomePage/NewArrivals.jsx";
+import NewArrivals from "../Pages/UserPage/NewArrivals.jsx";
+import Footer from "../Components/Footer.jsx";
 
 export const Userhome = () => {
   const darkStyle = {
@@ -31,6 +32,7 @@ export const Userhome = () => {
       <div ref={heroRef}>
         <HeroPage />
         <NewArrivals />
+        <Footer />
       </div>
     </div>
   );
