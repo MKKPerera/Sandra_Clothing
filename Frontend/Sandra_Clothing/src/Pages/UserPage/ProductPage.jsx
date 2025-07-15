@@ -8,7 +8,7 @@ import productImg4 from "../../assets/product4.png";
 
 const ProductPage = () => {
   const [mainImage, setMainImage] = useState(productImg1);
-  const sizes = ["S", "M", "L"];
+  const sizes = ["S", "M", "L", "XL"];
   const colors = ["#D7CCC8", "#66785E", "#6D4C41"];
 
   return (

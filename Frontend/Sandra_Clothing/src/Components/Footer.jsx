@@ -1,32 +1,40 @@
 import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import footerImage from "../assets/footer.jpg.avif";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-[#E2D5C2] text-[#331D0C] px-6 md:px-16 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
         {/* Customer Service */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 tracking-wide">
+          <h3 className="mb-4 text-xl font-semibold tracking-wide">
             Customer Service
           </h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:underline cursor-pointer">Contact Us</li>
-            <li className="hover:underline cursor-pointer">Size Guide</li>
+            <li
+              className="cursor-pointer hover:underline"
+              onClick={() => navigate("/contactus")}
+            >
+              Contact Us
+            </li>
+            <li className="cursor-pointer hover:underline">Size Guide</li>
           </ul>
         </div>
 
         {/* Find a Store */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 tracking-wide">
+          <h3 className="mb-4 text-xl font-semibold tracking-wide">
             Find a Store
           </h3>
-          <p className="text-sm mb-1">
+          <p className="mb-1 text-sm">
             <span className="font-medium">Address:</span> 6A, Kaluwala Road,
             Ganemulla.
           </p>
-          <p className="text-sm mb-1">
+          <p className="mb-1 text-sm">
             <span className="font-medium">Phone:</span> +94 710 456 438
           </p>
           <p className="text-sm">
@@ -36,14 +44,14 @@ const Footer = () => {
 
         {/* Newsletter Signup */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 tracking-wide">
+          <h3 className="mb-4 text-xl font-semibold tracking-wide">
             Newsletter
           </h3>
-          <p className="text-sm mb-4">
+          <p className="mb-4 text-sm">
             Sign up to stay in the loop. Receive updates, access to exclusive
             deals, and more.
           </p>
-          <form className="flex flex-col sm:flex-row items-center gap-2">
+          <form className="flex flex-col items-center gap-2 sm:flex-row">
             <input
               type="email"
               placeholder="Your email"
@@ -72,7 +80,7 @@ const Footer = () => {
           <img
             src={footerImage}
             alt="Footer"
-            className="mt-4 w-full h-32 object-cover rounded-md"
+            className="object-cover w-full h-32 mt-4 rounded-md"
           />
         </div>
       </div>

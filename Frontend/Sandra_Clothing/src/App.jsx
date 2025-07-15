@@ -8,6 +8,7 @@ import LinenPage from "./Pages/UserPage/LinenPage.jsx";
 import Frocks from "./Pages/UserPage/Frocks.jsx";
 import TshirtPage from "./Pages/UserPage/TshirtPage.jsx";
 import ProductPage from "./Pages/UserPage/ProductPage.jsx";
+import ContactUsPage from "./Pages/UserPage/ContactUsPage.jsx";
 import { Userhome } from "./Pages/Userhome.jsx";
 import Footer from "./Components/Footer.jsx";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/frockpage" element={<Frocks />} />
         <Route path="/tshirtpage" element={<TshirtPage />} />
         <Route path="/productpage" element={<ProductPage />} />
+        <Route path="/contactus" element={<ContactUsPage />} />
 
         <Route path="/footer" element={<Footer />} />
       </Routes>
