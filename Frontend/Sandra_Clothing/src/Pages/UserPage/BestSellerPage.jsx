@@ -1,39 +1,60 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import product1 from "../../assets/linenfrock.jpg.webp";
 import product2 from "../../assets/croptop.jpeg.webp";
 import product3 from "../../assets/linenfrock.jpg.webp";
-import product4 from "../../assets/croptop.jpeg.webp";
+import product4 from "../../assets/product2.png";
 
 const bestSellers = [
   {
     id: 1,
+    name: "Linen Classic Dress",
+    price: "Rs. 5,500",
+    image: product4,
+  },
+  {
+    id: 2,
     name: "Elegant Linen Dress",
     price: "Rs. 6,200",
     image: product1,
   },
   {
-    id: 2,
+    id: 3,
     name: "Classic Crop Top",
     price: "Rs. 4,500",
     image: product2,
   },
   {
-    id: 3,
+    id: 4,
     name: "Floral Skirt",
     price: "Rs. 5,000",
     image: product3,
   },
   {
-    id: 4,
+    id: 5,
     name: "Cotton Wrap Dress",
     price: "Rs. 7,200",
+    image: product2,
+  },
+  {
+    id: 6,
+    name: "Linen Classic Dress",
+    price: "Rs. 5,500",
     image: product4,
   },
 ];
 
 const BestSellerPage = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (item) => {
+    if (item.name === "Linen Classic Dress") {
+      navigate("/productpage");
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -52,7 +73,8 @@ const BestSellerPage = () => {
           {bestSellers.map((item) => (
             <div
               key={item.id}
-              className="overflow-hidden transition duration-300 bg-white rounded shadow-lg hover:shadow-xl"
+              className="overflow-hidden transition duration-300 bg-white rounded shadow-lg cursor-pointer hover:shadow-xl"
+              onClick={() => handleCardClick(item)}
             >
               <img
                 src={item.image}

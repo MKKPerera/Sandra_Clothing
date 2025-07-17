@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import frockImage from "../../assets/frock.jpg";
 import Dress from "../../assets/product2.png";
 
 const Frocks = () => {
+  const navigate = useNavigate();
+
   const [filters, setFilters] = useState({
     productType: "",
     size: "",
@@ -14,18 +17,18 @@ const Frocks = () => {
   const products = [
     {
       id: 1,
-      name: "Floral Frock",
-      price: "Rs. 4,800",
+      name: "Linen Classic Dress",
+      price: "Rs. 5,500",
       priceValue: 4800,
-      type: "frock",
-      image: frockImage,
+      type: "casual",
+      image: Dress,
     },
     {
       id: 2,
       name: "Casual Frock",
       price: "Rs. 3,900",
       priceValue: 3900,
-      type: "frock",
+      type: "casual",
       image: frockImage,
     },
     {
@@ -33,7 +36,7 @@ const Frocks = () => {
       name: "Party Frock",
       price: "Rs. 6,200",
       priceValue: 6200,
-      type: "frock",
+      type: "party",
       image: frockImage,
     },
     {
@@ -41,7 +44,7 @@ const Frocks = () => {
       name: "Classic Frock",
       price: "Rs. 5,000",
       priceValue: 5000,
-      type: "frock",
+      type: "casual",
       image: frockImage,
     },
     {
@@ -49,7 +52,7 @@ const Frocks = () => {
       name: "Summer Frock",
       price: "Rs. 3,500",
       priceValue: 3500,
-      type: "frock",
+      type: "casual",
       image: frockImage,
     },
     {
@@ -57,7 +60,7 @@ const Frocks = () => {
       name: "Linen Classic Dress",
       price: "Rs. 5,500",
       priceValue: 5500,
-      type: "frock",
+      type: "party",
       image: frockImage,
     },
   ];
@@ -67,6 +70,12 @@ const Frocks = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleCardClick = (item) => {
+    if (item.name === "Linen Classic Dress") {
+      navigate("/productpage");
+    }
   };
 
   const filteredProducts = products.filter((product) => {
@@ -89,14 +98,12 @@ const Frocks = () => {
     <>
       <NavBar />
 
-      {/* Filter Section */}
       <div className="bg-[#F2E7D8] py-8 px-4 md:px-16">
         <h2 className="text-3xl font-bold text-[#331D0C] mb-6 text-center tracking-wide">
           Explore Frocks Collection
         </h2>
 
         <div className="flex flex-col justify-center gap-6 mb-10 md:flex-row">
-          {/* Product Type Filter */}
           <select
             name="productType"
             value={filters.productType}
@@ -104,24 +111,10 @@ const Frocks = () => {
             className="px-4 py-2 tracking-wide border border-gray-400 bg-transparent text-[#331D0C] rounded"
           >
             <option value="">Product Type</option>
-            <option value="frock">Casual Frock</option>
-            <option value="frock">Party Frock</option>
+            <option value="casual">Casual Frock</option>
+            <option value="party">Party Frock</option>
           </select>
 
-          {/* Size Filter */}
-          {/* <select
-            name="size"
-            value={filters.size}
-            onChange={handleFilterChange}
-            className="px-4 py-2 tracking-wide border border-gray-400 bg-transparent text-[#331D0C] rounded"
-          >
-            <option value="">Size</option>
-            <option value="S">Small (S)</option>
-            <option value="M">Medium (M)</option>
-            <option value="L">Large (L)</option>
-          </select> */}
-
-          {/* Price Filter */}
           <select
             name="price"
             value={filters.price}
@@ -135,13 +128,13 @@ const Frocks = () => {
           </select>
         </div>
 
-        {/* Product Cards */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((item) => (
               <div
                 key={item.id}
-                className="p-4 transition bg-white shadow hover:shadow-xl"
+                className="p-4 transition bg-white shadow cursor-pointer hover:shadow-xl"
+                onClick={() => handleCardClick(item)}
               >
                 <img
                   src={item.image}

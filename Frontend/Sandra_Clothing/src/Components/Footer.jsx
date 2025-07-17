@@ -21,7 +21,12 @@ const Footer = () => {
             >
               Contact Us
             </li>
-            <li className="cursor-pointer hover:underline">Size Guide</li>
+            <li
+              className="cursor-pointer hover:underline"
+              onClick={() => navigate("/sizeguide")}
+            >
+              Size Guide
+            </li>
           </ul>
         </div>
 

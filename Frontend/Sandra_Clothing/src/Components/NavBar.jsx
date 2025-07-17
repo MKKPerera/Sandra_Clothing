@@ -23,7 +23,7 @@ const NavBar = () => {
           <Link to="/linenpage">Linen</Link>
         </li>
         <li className="cursor-pointer hover:text-gray-600">
-          <Link to="/frockpage">Frocks</Link>
+          <Link to="/frockpage">Dresses</Link>
         </li>
         <li className="cursor-pointer hover:text-gray-600">
           <Link to="/tshirtpage">T-shirts</Link>
