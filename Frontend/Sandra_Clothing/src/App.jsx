@@ -3,6 +3,7 @@ import HeroPage from "./Pages/UserPage/HeroPage.jsx";
 import Login from "./Pages/Login.jsx";
 import SignUp from "./Pages/SignUp.jsx";
 import NewArrivals from "./Pages/UserPage/NewArrivals.jsx";
+import WhyChooseUs from "./Pages/UserPage/WhyChooseUs.jsx";
 import BestSellerPage from "./Pages/UserPage/BestSellerPage.jsx";
 import LinenPage from "./Pages/UserPage/LinenPage.jsx";
 import Frocks from "./Pages/UserPage/Frocks.jsx";
@@ -24,6 +25,7 @@ function App() {
 
         <Route path="/hero" element={<HeroPage />} />
         <Route path="/newarrivals" element={<NewArrivals />} />
+        <Route path="/whychooseus" element={<WhyChooseUs />} />
         <Route path="/bestsellers" element={<BestSellerPage />} />
         <Route path="/linenpage" element={<LinenPage />} />
         <Route path="/frockpage" element={<Frocks />} />
