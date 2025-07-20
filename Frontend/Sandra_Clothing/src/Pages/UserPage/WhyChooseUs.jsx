@@ -1,34 +1,36 @@
-import React from "react";
-import { FaShippingFast, FaLock, FaRecycle, FaAward } from "react-icons/fa";
+import { FaWater, FaAward, FaLeaf, FaTshirt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const strengths = [
   {
-    icon: <FaShippingFast className="text-4xl text-indigo-600" />,
-    title: "Fast Delivery",
-    description: "We ensure quick delivery straight to your doorstep.",
+    icon: <FaWater className="text-4xl text-[#A67B5B]" />,
+    title: "Moisture-Wicking",
+    description:
+      "Stay dry and comfortable—our breathable fabrics draw sweat away from your body for all-day freshness.",
   },
   {
-    icon: <FaLock className="text-4xl text-indigo-600" />,
-    title: "Secure Payments",
-    description: "All transactions are protected with top-grade security.",
-  },
-  {
-    icon: <FaRecycle className="text-4xl text-indigo-600" />,
+    icon: <FaLeaf className="text-4xl text-[#A67B5B]" />,
     title: "Eco-Friendly",
-    description: "We promote sustainability through recyclable packaging.",
+    description:
+      "We promote sustainability with organic fabrics and recyclable packaging.",
   },
   {
-    icon: <FaAward className="text-4xl text-indigo-600" />,
+    icon: <FaAward className="text-4xl text-[#A67B5B]" />,
     title: "Top Quality",
     description: "Our products meet the highest standards in quality.",
+  },
+  {
+    icon: <FaTshirt className="text-4xl text-[#A67B5B]" />,
+    title: "Color Retention",
+    description:
+      "Our fabrics maintain their rich color even after multiple washes, ensuring a lasting vibrant look.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="px-6 py-12 bg-gray-50">
-      <h2 className="mb-10 text-3xl font-bold text-center text-gray-800">
+    <section className="px-6 py-12 bg-[#F2E7D8]">
+      <h2 className="mb-10 text-3xl font-bold text-center text-[#4B3621]">
         Why Choose Us
       </h2>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -40,11 +42,17 @@ const WhyChooseUs = () => {
             transition={{ delay: index * 0.2 }}
             className="p-6 text-center transition duration-300 bg-white shadow-md rounded-2xl hover:shadow-xl"
           >
-            <div className="flex justify-center mb-4">{item.icon}</div>
-            <h3 className="mb-2 text-xl font-semibold text-gray-700">
+            <motion.div
+              className="flex justify-center mb-4"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
+            >
+              {item.icon}
+            </motion.div>
+            <h3 className="mb-2 text-xl font-semibold text-[#4B3621]">
               {item.title}
             </h3>
-            <p className="text-sm text-gray-600">{item.description}</p>
+            <p className="text-sm text-[#5C4B3B]">{item.description}</p>
           </motion.div>
         ))}
       </div>

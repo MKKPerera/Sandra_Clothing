@@ -2,6 +2,11 @@ import { useState } from "react";
 import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import Tshirt from "../../assets/tshirt.jpg";
+import croptshirt from "../../assets/Crop t shirt1.jpg";
+import croptshirt2 from "../../assets/crop t shirt 2.jpg.webp";
+import checktop from "../../assets/check top.jpg";
+import checktop2 from "../../assets/checktop2.jpg";
+import tshirt2 from "../../assets/t shirt.webp";
 
 const TshirtPage = () => {
   const [filters, setFilters] = useState({
@@ -10,15 +15,14 @@ const TshirtPage = () => {
     price: "",
   });
 
-  // Updated products with 'type' and 'priceValue' fields
   const products = [
     {
       id: 1,
-      name: "Tshirt",
+      name: "Check top",
       price: "Rs. 4,500",
       priceValue: 4500,
-      type: "tshirt",
-      image: Tshirt,
+      type: "checktshirt",
+      image: checktop2,
     },
     {
       id: 2,
@@ -26,7 +30,7 @@ const TshirtPage = () => {
       price: "Rs. 2,500",
       priceValue: 2500,
       type: "croptshirt",
-      image: Tshirt,
+      image: croptshirt,
     },
     {
       id: 3,
@@ -34,7 +38,7 @@ const TshirtPage = () => {
       price: "Rs. 6,500",
       priceValue: 6500,
       type: "croptshirt",
-      image: Tshirt,
+      image: croptshirt2,
     },
     {
       id: 4,
@@ -46,11 +50,19 @@ const TshirtPage = () => {
     },
     {
       id: 5,
-      name: "Check Tshirt",
+      name: "Check Top",
       price: "Rs. 7,500",
       priceValue: 7500,
       type: "checktshirt",
-      image: Tshirt,
+      image: checktop,
+    },
+    {
+      id: 6,
+      name: "Tshirt",
+      price: "Rs. 8,500",
+      priceValue: 8500,
+      type: "tshirt",
+      image: tshirt2,
     },
   ];
 

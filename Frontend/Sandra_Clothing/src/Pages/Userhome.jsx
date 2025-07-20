@@ -2,6 +2,7 @@ import { useRef } from "react";
 import HeroPage from "../Pages/UserPage/HeroPage.jsx";
 import NavBar from "../Components/NavBar.jsx";
 import NewArrivals from "../Pages/UserPage/NewArrivals.jsx";
+import WhyChooseUs from "../Pages/UserPage/WhyChooseUs.jsx";
 import Footer from "../Components/Footer.jsx";
 
 export const Userhome = () => {
@@ -32,6 +33,7 @@ export const Userhome = () => {
       <div ref={heroRef}>
         <HeroPage />
         <NewArrivals />
+        <WhyChooseUs />
         <Footer />
       </div>
     </div>

@@ -26,7 +26,10 @@ const NavBar = () => {
           <Link to="/frockpage">Dresses</Link>
         </li>
         <li className="cursor-pointer hover:text-gray-600">
-          <Link to="/tshirtpage">T-shirts</Link>
+          <Link to="/tshirtpage">Tops</Link>
+        </li>
+        <li className="cursor-pointer hover:text-gray-600">
+          <Link to="/pantspage">Pants</Link>
         </li>
       </ul>
 

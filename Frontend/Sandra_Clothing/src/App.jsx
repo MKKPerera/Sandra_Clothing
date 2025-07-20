@@ -8,6 +8,7 @@ import BestSellerPage from "./Pages/UserPage/BestSellerPage.jsx";
 import LinenPage from "./Pages/UserPage/LinenPage.jsx";
 import Frocks from "./Pages/UserPage/Frocks.jsx";
 import TshirtPage from "./Pages/UserPage/TshirtPage.jsx";
+import PantsPage from "./Pages/UserPage/PantsPage.jsx";
 import ProductPage from "./Pages/UserPage/ProductPage.jsx";
 import ContactUsPage from "./Pages/UserPage/ContactUsPage.jsx";
 import SizeGuide from "./Pages/UserPage/SizeGuide.jsx";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/linenpage" element={<LinenPage />} />
         <Route path="/frockpage" element={<Frocks />} />
         <Route path="/tshirtpage" element={<TshirtPage />} />
+        <Route path="/pantspage" element={<PantsPage />} />
         <Route path="/productpage" element={<ProductPage />} />
         <Route path="/contactus" element={<ContactUsPage />} />
         <Route path="/sizeguide" element={<SizeGuide />} />

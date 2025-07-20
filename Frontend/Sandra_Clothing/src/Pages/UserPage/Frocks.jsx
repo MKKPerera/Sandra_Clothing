@@ -4,6 +4,10 @@ import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import frockImage from "../../assets/frock.jpg";
 import Dress from "../../assets/product2.png";
+import dress2 from "../../assets/party frock.jpg";
+import classic from "../../assets/classic.webp";
+import dress3 from "../../assets/classic 3.webp";
+import dress4 from "../../assets/linen2.webp";
 
 const Frocks = () => {
   const navigate = useNavigate();
@@ -25,6 +29,14 @@ const Frocks = () => {
     },
     {
       id: 2,
+      name: "Linen Classic Dress",
+      price: "Rs. 6,500",
+      priceValue: 6500,
+      type: "casual",
+      image: dress4,
+    },
+    {
+      id: 3,
       name: "Casual Frock",
       price: "Rs. 3,900",
       priceValue: 3900,
@@ -32,36 +44,28 @@ const Frocks = () => {
       image: frockImage,
     },
     {
-      id: 3,
-      name: "Party Frock",
-      price: "Rs. 6,200",
-      priceValue: 6200,
-      type: "party",
-      image: frockImage,
-    },
-    {
       id: 4,
-      name: "Classic Frock",
-      price: "Rs. 5,000",
-      priceValue: 5000,
-      type: "casual",
-      image: frockImage,
+      name: "Satin Party Frock",
+      price: "Rs. 10,200",
+      priceValue: 10200,
+      type: "party",
+      image: dress2,
     },
     {
       id: 5,
-      name: "Summer Frock",
-      price: "Rs. 3,500",
-      priceValue: 3500,
-      type: "casual",
-      image: frockImage,
+      name: "Classic Frock",
+      price: "Rs. 5,000",
+      priceValue: 5000,
+      type: "classic",
+      image: classic,
     },
     {
       id: 6,
-      name: "Linen Classic Dress",
-      price: "Rs. 5,500",
-      priceValue: 5500,
-      type: "party",
-      image: frockImage,
+      name: "Classic Frock",
+      price: "Rs. 3,500",
+      priceValue: 3500,
+      type: "classic",
+      image: dress3,
     },
   ];
 
@@ -113,6 +117,7 @@ const Frocks = () => {
             <option value="">Product Type</option>
             <option value="casual">Casual Frock</option>
             <option value="party">Party Frock</option>
+            <option value="classic">Classic Frock</option>
           </select>
 
           <select
