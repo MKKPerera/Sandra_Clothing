@@ -4,8 +4,12 @@ import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import product1 from "../../assets/linenfrock.jpg.webp";
 import product2 from "../../assets/croptop.jpeg.webp";
-import product3 from "../../assets/linenfrock.jpg.webp";
+import product3 from "../../assets/Crop t shirt1.jpg";
 import product4 from "../../assets/product2.png";
+import product5 from "../../assets/midi skirt.webp";
+import product6 from "../../assets/classic 3.webp";
+import product7 from "../../assets/tibet dress.webp";
+import product8 from "../../assets/cargo pants.webp";
 
 const bestSellers = [
   {
@@ -28,21 +32,39 @@ const bestSellers = [
   },
   {
     id: 4,
-    name: "Floral Skirt",
-    price: "Rs. 5,000",
-    image: product3,
+    name: "Cargo Pant",
+    price: "Rs. 4,200",
+    image: product8,
   },
   {
     id: 5,
-    name: "Cotton Wrap Dress",
-    price: "Rs. 7,200",
-    image: product2,
+    name: "Crop Top T shirt",
+    price: "Rs. 2,500",
+    image: product3,
   },
   {
     id: 6,
     name: "Linen Classic Dress",
     price: "Rs. 5,500",
     image: product4,
+  },
+  {
+    id: 7,
+    name: "Linen Midi Skirt",
+    price: "Rs. 5,500",
+    image: product5,
+  },
+  {
+    id: 8,
+    name: "Classic Frock",
+    price: "Rs. 3,500",
+    image: product6,
+  },
+  {
+    id: 9,
+    name: "Tibet Dress",
+    price: "Rs. 6,500",
+    image: product7,
   },
 ];
 
@@ -69,7 +91,7 @@ const BestSellerPage = () => {
           appeal.
         </p>
 
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {bestSellers.map((item) => (
             <div
               key={item.id}

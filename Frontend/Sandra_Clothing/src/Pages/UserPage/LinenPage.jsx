@@ -1,24 +1,40 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../Components/NavBar.jsx";
 import Footer from "../../Components/Footer.jsx";
 import linenImg1 from "../../assets/linenfrock.jpg.webp";
 import linendress from "../../assets/product2.png";
+import linenskirt from "../../assets/linen skirt.jpg";
+import linenskirt2 from "../../assets/midi skirt.webp";
+import linentop from "../../assets/linentop.webp";
+import linentop2 from "../../assets/printed linentop.webp";
+import linenpant from "../../assets/linenpant.webp";
 
 const LinenPage = () => {
+  const navigate = useNavigate();
+
   const [filters, setFilters] = useState({
     productType: "",
-    size: "",
     price: "",
   });
 
   const products = [
     {
       id: 1,
-      name: "Linen Top",
+      name: "Linen Classic Dress",
+      price: "Rs. 5,500",
+      priceValue: 5500,
+      type: "frock",
+      image: linendress,
+      link: "/productpage",
+    },
+    {
+      id: 8,
+      name: "Short sleeve Linen Top",
       price: "Rs. 4,500",
       priceValue: 4500,
       type: "top",
-      image: linenImg1,
+      image: linentop,
     },
     {
       id: 2,
@@ -26,7 +42,7 @@ const LinenPage = () => {
       price: "Rs. 4,500",
       priceValue: 4500,
       type: "skirt",
-      image: linenImg1,
+      image: linenskirt,
     },
     {
       id: 3,
@@ -42,23 +58,23 @@ const LinenPage = () => {
       price: "Rs. 3,800",
       priceValue: 3800,
       type: "top",
-      image: linenImg1,
+      image: linentop2,
     },
     {
       id: 5,
-      name: "Linen Skirt",
+      name: "Linen Midi Skirt",
       price: "Rs. 5,200",
       priceValue: 5200,
       type: "skirt",
-      image: linenImg1,
+      image: linenskirt2,
     },
     {
       id: 6,
-      name: "Linen Top",
+      name: "Linen Wide Leg Pant",
       price: "Rs. 6,800",
       priceValue: 6800,
-      type: "top",
-      image: linenImg1,
+      type: "pant",
+      image: linenpant,
     },
     {
       id: 7,
@@ -67,14 +83,6 @@ const LinenPage = () => {
       priceValue: 4200,
       type: "frock",
       image: linenImg1,
-    },
-    {
-      id: 8,
-      name: "Linen Classic Dress",
-      price: "Rs. 5,500",
-      priceValue: 5500,
-      type: "frock",
-      image: linendress,
     },
   ];
 
@@ -85,7 +93,12 @@ const LinenPage = () => {
     }));
   };
 
-  // 🔍 Apply filters
+  const handleCardClick = (item) => {
+    if (item.link) {
+      navigate(item.link);
+    }
+  };
+
   const filteredProducts = products.filter((product) => {
     const matchType = filters.productType
       ? product.type === filters.productType
@@ -106,14 +119,13 @@ const LinenPage = () => {
     <>
       <NavBar />
 
-      {/* Filter Section */}
       <div className="bg-[#F2E7D8] py-8 px-4 md:px-16">
         <h2 className="text-3xl font-bold text-[#331D0C] mb-6 text-center tracking-wide">
           Explore Linen Collection
         </h2>
 
+        {/* Filters */}
         <div className="flex flex-col justify-center gap-6 mb-10 md:flex-row">
-          {/* Product Type Filter */}
           <select
             name="productType"
             value={filters.productType}
@@ -123,10 +135,10 @@ const LinenPage = () => {
             <option value="">Product Type</option>
             <option value="top">Top</option>
             <option value="skirt">Skirt</option>
-            <option value="frock">Frock</option>
+            <option value="frock">Dress</option>
+            <option value="pant">Pants</option>
           </select>
 
-          {/* Price Filter */}
           <select
             name="price"
             value={filters.price}
@@ -140,13 +152,14 @@ const LinenPage = () => {
           </select>
         </div>
 
-        {/* Product Cards */}
+        {/* Products */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
           {filteredProducts.length > 0 ? (
             filteredProducts.map((item) => (
               <div
                 key={item.id}
-                className="p-4 transition bg-white shadow hover:shadow-xl"
+                className="p-4 transition bg-white shadow cursor-pointer hover:shadow-xl"
+                onClick={() => handleCardClick(item)}
               >
                 <img
                   src={item.image}

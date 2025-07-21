@@ -7,6 +7,7 @@ import pants3 from "../../assets/harem pant.jpg";
 import pants4 from "../../assets/wideleg.jpg";
 import pant5 from "../../assets/Linen .webp";
 import pant6 from "../../assets/Harem Pant2.avif";
+import pant7 from "../../assets/short.jpg";
 
 const PantsPage = () => {
   const [filters, setFilters] = useState({
@@ -62,6 +63,14 @@ const PantsPage = () => {
       priceValue: 7100,
       type: "harem",
       image: pant6,
+    },
+    {
+      id: 7,
+      name: "Linen short",
+      price: "Rs. 2,850",
+      priceValue: 2850,
+      type: "linen",
+      image: pant7,
     },
   ];
 
