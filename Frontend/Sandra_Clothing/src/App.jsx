@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroPage from "./Pages/UserPage/HeroPage.jsx";
 import Login from "./Pages/Login.jsx";
 import SignUp from "./Pages/SignUp.jsx";
+import ForgetPassword from "./Pages/ForgetPassword.jsx";
 import NewArrivals from "./Pages/UserPage/NewArrivals.jsx";
 import WhyChooseUs from "./Pages/UserPage/WhyChooseUs.jsx";
 import BestSellerPage from "./Pages/UserPage/BestSellerPage.jsx";
@@ -23,6 +24,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgetpassword" element={<ForgetPassword />} />
 
         <Route path="/hero" element={<HeroPage />} />
         <Route path="/newarrivals" element={<NewArrivals />} />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NavBar from "../Components/NavBar.jsx";
 import Footer from "../Components/Footer.jsx";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ const Login = () => {
       <div className="py-12 flex items-center justify-center bg-[#E8DFD1] px-4">
         <form
           onSubmit={handleSubmit}
-          className="bg-white shadow-md px-8 py-10 w-full max-w-md"
+          className="w-full max-w-md px-8 py-10 bg-white shadow-md"
         >
           <h2 className="text-2xl font-bold mb-6 text-center tracking-widest text-[#331D0C]">
             LOGIN
@@ -39,7 +40,7 @@ const Login = () => {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-gray-700 text-sm font-semibold mb-2 tracking-wide"
+              className="block mb-2 text-sm font-semibold tracking-wide text-gray-700"
             >
               Email
             </label>
@@ -59,7 +60,7 @@ const Login = () => {
           <div className="mb-2">
             <label
               htmlFor="password"
-              className="block text-gray-700 text-sm font-semibold mb-2 tracking-wide"
+              className="block mb-2 text-sm font-semibold tracking-wide text-gray-700"
             >
               Password
             </label>
@@ -77,12 +78,12 @@ const Login = () => {
 
           {/* Forgot password */}
           <div className="mb-6 text-right">
-            <a
-              href="#"
+            <Link
+              to="/forgetpassword"
               className="text-sm text-[#331D0C] hover:underline tracking-wide"
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           {/* Submit button */}
@@ -94,7 +95,7 @@ const Login = () => {
           </button>
 
           {/* Sign up link */}
-          <p className="text-center text-sm text-gray-600 mt-6 tracking-wide">
+          <p className="mt-6 text-sm tracking-wide text-center text-gray-600">
             Don’t have an account?{" "}
             <a
               href="/signup"

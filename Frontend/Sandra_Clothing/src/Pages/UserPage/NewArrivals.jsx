@@ -3,6 +3,10 @@ import topImage from "../../assets/top.jpeg.webp";
 import cropTopImage from "../../assets/croptop.jpeg.webp";
 import dressImage from "../../assets/product2.png";
 import dressImage2 from "../../assets/linenfrock.jpg.webp";
+import mididress from "../../assets/midi skirt.webp";
+import tshirt from "../../assets/t shirt.webp";
+import short from "../../assets/short.jpg";
+import harem from "../../assets/Harem Pant2.avif";
 import { useNavigate } from "react-router-dom";
 
 const allArrivals = [
@@ -15,10 +19,11 @@ const allArrivals = [
   },
   {
     id: 2,
-    name: "Classic crop top",
-    price: "Rs. 4,500",
-    image: topImage,
+    name: "Linen Midi Skirt",
+    price: "Rs. 5,200",
+    image: mididress,
   },
+
   {
     id: 3,
     name: "Long dress",
@@ -33,27 +38,27 @@ const allArrivals = [
   },
   {
     id: 5,
-    name: "Summer Vibe Top",
-    price: "Rs. 4,200",
-    image: dressImage2,
+    name: "T shirt",
+    price: "Rs. 8,500",
+    image: tshirt,
   },
   {
     id: 6,
-    name: "Boho Dress",
-    price: "Rs. 6,800",
-    image: dressImage2,
+    name: "Classic crop top",
+    price: "Rs. 4,500",
+    image: topImage,
   },
   {
     id: 7,
-    name: "Elegant Party Dress",
-    price: "Rs. 7,300",
-    image: dressImage2,
+    name: "Linen short",
+    price: "Rs. 2,850",
+    image: short,
   },
   {
     id: 8,
-    name: "Chic Casual Wear",
-    price: "Rs. 3,800",
-    image: dressImage2,
+    name: "Harem Baggy Pant",
+    price: "Rs. 7,100",
+    image: harem,
   },
 ];
 
