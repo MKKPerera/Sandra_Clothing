@@ -13,6 +13,7 @@ import PantsPage from "./Pages/UserPage/PantsPage.jsx";
 import ProductPage from "./Pages/UserPage/ProductPage.jsx";
 import ContactUsPage from "./Pages/UserPage/ContactUsPage.jsx";
 import SizeGuide from "./Pages/UserPage/SizeGuide.jsx";
+import AddProducts from "./Pages/AdminPages/addProducts.jsx";
 import { Userhome } from "./Pages/Userhome.jsx";
 import Footer from "./Components/Footer.jsx";
 
@@ -37,6 +38,8 @@ function App() {
         <Route path="/productpage" element={<ProductPage />} />
         <Route path="/contactus" element={<ContactUsPage />} />
         <Route path="/sizeguide" element={<SizeGuide />} />
+
+        <Route path="/adminaddproducts" element={<AddProducts />} />
 
         <Route path="/footer" element={<Footer />} />
       </Routes>
