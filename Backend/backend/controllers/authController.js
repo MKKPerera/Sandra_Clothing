@@ -42,3 +42,33 @@ export const registerUser = async (req, res) => {
         res.status(500).json({ message: "Server error", error: err.message });
     }
 };
+
+export const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+
+        res.status(200).json({
+            message: "Login successful",
+            user: {
+                id: user.userId,
+                fullName: user.fullName,
+                email: user.email,
+                userType: user.userType,
+            },
+        });
+    } catch (err) {
+        console.error("Login error:", err);
+        res.status(500).json({ message: "Server error", error: err.message });
+    }
+};
