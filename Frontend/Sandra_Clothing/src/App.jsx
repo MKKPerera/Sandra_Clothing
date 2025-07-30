@@ -14,6 +14,7 @@ import ProductPage from "./Pages/UserPage/ProductPage.jsx";
 import ContactUsPage from "./Pages/UserPage/ContactUsPage.jsx";
 import SizeGuide from "./Pages/UserPage/SizeGuide.jsx";
 import AddProducts from "./Pages/AdminPages/addProducts.jsx";
+import AdminDashboard from "./Pages/AdminPages/adminDashboard.jsx";
 import { Userhome } from "./Pages/Userhome.jsx";
 import Footer from "./Components/Footer.jsx";
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/sizeguide" element={<SizeGuide />} />
 
         <Route path="/adminaddproducts" element={<AddProducts />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
 
         <Route path="/footer" element={<Footer />} />
       </Routes>
