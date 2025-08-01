@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import AdminSidebar from "../../Components/adminSidebar.jsx";
 
 const data = [
   { category: "Linen", amount: 120 },
@@ -19,24 +20,25 @@ const data = [
 const AdminDashboard = () => {
   return (
     <div
-      className="min-h-screen p-6 bg-center bg-cover"
-      style={{
-        backgroundImage: "url('/src/assets/hero1.jpg')",
-      }}
+      className="flex min-h-screen bg-center bg-cover"
+      style={{ backgroundImage: "url('/src/assets/hero1.jpg')" }}
     >
-      <h2 className="mb-4 text-3xl font-bold text-white drop-shadow">
-        Admin Dashboard
-      </h2>
-      <div className="w-full max-w-4xl p-4 mx-auto bg-white shadow-lg bg-opacity-90 rounded-xl h-96">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="category" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="amount" fill="#331D0C" radius={[6, 6, 0, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
+      <AdminSidebar />
+      <div className="flex-1 p-6">
+        <h2 className="mb-4 text-3xl font-bold text-white drop-shadow">
+          Admin Dashboard
+        </h2>
+        <div className="w-full max-w-4xl p-4 mx-auto bg-white shadow-lg bg-opacity-90 rounded-xl h-96">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="category" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="amount" fill="#331D0C" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
