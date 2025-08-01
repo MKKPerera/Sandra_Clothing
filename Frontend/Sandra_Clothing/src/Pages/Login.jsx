@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../Components/NavBar.jsx";
 import Footer from "../Components/Footer.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
+  const navigate = useNavigate(); // ✅ Hook
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,7 +27,15 @@ const Login = () => {
         formData
       );
       alert(res.data.message);
-      console.log(res.data.user);
+
+      const user = res.data.user;
+      console.log("Logged in user:", user);
+
+      if (user?.userType === "admin") {
+        navigate("/admindashboard");
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
       console.error("Login error:", err.response?.data || err.message);
@@ -45,7 +55,6 @@ const Login = () => {
             LOGIN
           </h2>
 
-          {/* Email */}
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2 text-sm font-semibold">
               Email
@@ -62,7 +71,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Password */}
           <div className="mb-2">
             <label
               htmlFor="password"
@@ -82,7 +90,6 @@ const Login = () => {
             />
           </div>
 
-          {/* Forgot Password */}
           <div className="mb-6 text-right">
             <Link
               to="/forgetpassword"
@@ -92,7 +99,6 @@ const Login = () => {
             </Link>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-[#331D0C] text-white py-2 font-semibold tracking-widest hover:bg-[#4a2b12] transition duration-300"
@@ -100,7 +106,6 @@ const Login = () => {
             LOGIN
           </button>
 
-          {/* Sign Up Link */}
           <p className="mt-6 text-sm tracking-wide text-center text-gray-600">
             Don’t have an account?{" "}
             <Link

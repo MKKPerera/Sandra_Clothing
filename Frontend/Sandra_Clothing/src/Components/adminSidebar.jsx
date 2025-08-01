@@ -1,11 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaPlus, FaEdit, FaTshirt } from "react-icons/fa";
 
-const AdminSidebar = ({ onSelect }) => {
-  const handleClick = (section) => {
-    if (onSelect) {
-      onSelect(section);
-    }
+const AdminSidebar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (path) => {
+    navigate(path);
   };
 
   return (
@@ -15,7 +16,7 @@ const AdminSidebar = ({ onSelect }) => {
       <div className="space-y-4">
         <button
           className="flex items-center w-full gap-3 px-4 py-2 rounded hover:bg-gray-700"
-          onClick={() => handleClick("addProduct")}
+          onClick={() => handleClick("/adminaddproducts")}
         >
           <FaPlus />
           Add Product
@@ -23,7 +24,7 @@ const AdminSidebar = ({ onSelect }) => {
 
         <button
           className="flex items-center w-full gap-3 px-4 py-2 rounded hover:bg-gray-700"
-          onClick={() => handleClick("editProduct")}
+          onClick={() => handleClick("/admineditproducts")}
         >
           <FaEdit />
           Edit Product
@@ -32,14 +33,19 @@ const AdminSidebar = ({ onSelect }) => {
         <div className="mt-6">
           <h3 className="mb-2 text-sm text-gray-400 uppercase">Categories</h3>
           <ul className="space-y-2">
-            {["Linen", "Dresses", "Tops", "Pants"].map((category) => (
-              <li key={category}>
+            {[
+              { name: "Linen", path: "/linenpage" },
+              { name: "Dresses", path: "/frockpage" },
+              { name: "Tops", path: "/tshirtpage" },
+              { name: "Pants", path: "/pantspage" },
+            ].map((category) => (
+              <li key={category.name}>
                 <button
                   className="flex items-center w-full gap-3 px-4 py-2 rounded hover:bg-gray-700"
-                  onClick={() => handleClick(category.toLowerCase())}
+                  onClick={() => handleClick(category.path)}
                 >
                   <FaTshirt />
-                  {category}
+                  {category.name}
                 </button>
               </li>
             ))}
