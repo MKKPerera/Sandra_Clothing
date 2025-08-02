@@ -4,9 +4,12 @@ import NavBar from "../Components/NavBar.jsx";
 import Footer from "../Components/Footer.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const navigate = useNavigate(); // ✅ Hook
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,6 +34,10 @@ const Login = () => {
       const user = res.data.user;
       console.log("Logged in user:", user);
 
+      // ✅ Set login state
+      login(user.userType);
+
+      // ✅ Navigate based on role
       if (user?.userType === "admin") {
         navigate("/admindashboard");
       } else {
@@ -45,13 +52,12 @@ const Login = () => {
   return (
     <>
       <NavBar />
-
       <div className="py-12 flex items-center justify-center bg-[#E8DFD1] px-4">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-md px-8 py-10 bg-white shadow-md"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center tracking-widest text-[#331D0C]">
+          <h2 className="text-2xl font-bold mb-6 text-center text-[#331D0C]">
             LOGIN
           </h2>
 
@@ -106,7 +112,7 @@ const Login = () => {
             LOGIN
           </button>
 
-          <p className="mt-6 text-sm tracking-wide text-center text-gray-600">
+          <p className="mt-6 text-sm text-center text-gray-600">
             Don’t have an account?{" "}
             <Link
               to="/signup"
@@ -117,7 +123,6 @@ const Login = () => {
           </p>
         </form>
       </div>
-
       <Footer />
     </>
   );
